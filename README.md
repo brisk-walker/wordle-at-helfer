@@ -20,7 +20,27 @@ Viel Spaß mit dem kleinen *WÖRDL-Helfer*.
 
 ---
 
-**Lizenz: Public Domain** 
+# The little WÖRDL helper
+
+This small Python3-Tk application helps to find possible solutions of [WÖRDL puzzles](https://wordle.at/), e.g. on [https://wordle.at](https://wordle.at/) (German [Wordle](https://en.wikipedia.org/wiki/Wordle) puzzles with Ä=AE, Ö =OE, Ü=UE and ß=SS).
+
+The installation takes place in a directory of your choice. An installed [Python](https://www.python.org/) 3.8+ with [tkinter](https://docs.python.org/3/library/tkinter.html) is required.
+
+Start the application with
+
+		python3 main.py
+
+Enter all the gray (non-existent) letters, the green or red letters of the solution you already know, and the yellow or blue letters that are in the wrong position.
+
+Click *START* or simply press the *ENTER* key.
+
+Possible solutions are displayed in descending order of probability.
+
+Have fun with the little *WÖRDL helper*.
+
+---
+
+**Lizenz/License: Public Domain** 
 
 This is free and unencumbered software released into the public domain.
 
@@ -46,3 +66,4 @@ ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
 OTHER DEALINGS IN THE SOFTWARE.
 
 For more information, please refer to <http://unlicense.org/>
+
