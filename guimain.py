@@ -57,7 +57,7 @@ class GUIMain:
 
 	def click_start(self, *args):
 		# Suche
-		searchresult = config.WORDLIST.dosearch(self.knvletters.get(), 
+		searchresult = config.WORDLIST.dosearch(self.get_knvletters(), 
 			self.get_cletter_array(), self.get_fletters_array(), self.get_unique_fletters_array())
 		# Ergebnis anzeigen
 		self.textbox['state'] = 'normal'
@@ -90,18 +90,21 @@ class GUIMain:
 		self.knvletters.set(utils.remove_non_alpha(utils.unique_str(self.knvletters.get().upper())))
 
 	def get_fletters_array(self) -> list:
+		# Liste der (ggf. mehreren) Buchstaben "an falscher Pos."
 		r = []
 		for i in range(5):
 			r.append(self.fletters[i].get())
 		return r
 
 	def get_cletter_array(self) -> list:
+		# Liste der bislang vorhandenen Lösungen
 		r = []
 		for i in range(5):
 			r.append(self.cletter[i].get())
 		return r
 
 	def get_unique_fletters_array(self) -> list:
+		# Eindeutige Liste aller "an falscher Pos."
 		list1 = []
 		for i in range(5):
 			if len(self.fletters[i].get()) > 0:
@@ -112,3 +115,8 @@ class GUIMain:
 			if x not in r:
 				r.append(x)
 		return r
+	
+	def get_knvletters(self) -> str:
+		# Alle "nicht vorkommenden" Buchstaben, aber 
+		# entferne vorher ggf. vorhandene "an falscher Pos."
+		return ''.join(set(self.knvletters.get()) - set(self.get_unique_fletters_array()))
