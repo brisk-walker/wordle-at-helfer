@@ -1,7 +1,7 @@
 # utils.py
 
 def unique_str(s) -> str:
-	r = '';
+	r = ''
 	for c in [*s]:
 		if c not in r:
 			r = r + c
