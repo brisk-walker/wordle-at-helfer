@@ -80,7 +80,7 @@ class GUIMain:
 	def trace_cletter(self, *args):
 		index = int(args[0][1:])
 		if len(self.cletter[index].get()) > 0:
-			self.cletter[index].set(self.cletter[index].get().upper()[0])
+			self.cletter[index].set(utils.remove_non_alpha(self.cletter[index].get().upper()[0]))
 
 	def trace_fletters(self, *args):
 		index = int(args[0][1:])
